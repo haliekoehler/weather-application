@@ -1,4 +1,4 @@
-#Weather Forecast Application
+# Weather Forecast Application
 
 ### This project is currently : *In Progress*
 
