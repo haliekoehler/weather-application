@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+body {
+    background-image: url('img/sky.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+label {
+    color: black;
+}
+
+#main-header {
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 60px;
+    padding: 10px;
+}
+
+/* ------------- CURRENT CITY DIV ------------- */
+
+#currentCityDiv {
+    background-color: #5498a7;
+    padding: 5px;
+    font-family: 'Titillium Web', sans-serif;
+    text-align: center;
+    color: aliceblue;
+}
+
+#cityName {
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 1px #26444c;
+    font-size: 30px;
+}
+
+#numberOfDays {
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* ------------- FORECAST DIV ------------- */
+
+#forecastDiv {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.dateText {
+    background-color: aliceblue;
+    margin: 0 0 5px 0;
+    padding: 3px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bolder;
+}
+
+#forecastDiv > .dayDiv:first-child > .dateText {
+    font-size: 18px;
+    padding: 5px;
+}
+
+.dayDiv {
+    border: 1px solid rgba(27, 109, 133, 0.7);
+    padding: 10px;
+    width: 100%;
+    height: 250px;
+}
+
+#forecastDiv > .dayDiv:first-child {
+    background-color: aliceblue;
+}
+
+/* ------------- CHANGE LOCATION ------------- */
+
+#changeLocationDiv {
+    /*background-color: aliceblue;*/
+    padding: 10px;
+    width: 100%;
+}
+
+#changeLocationDiv > .form-group {
+    text-align: center;
+    width: 100%;
+}
+
+#changeLocationDiv > .form-group > input {
+    /*display: block;*/
+    margin: 5px auto;
+    padding: 5px;
+    width: 50%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* ------------- MAP ------------- */
+
+#map-canvas {
+    height: 600px;
+    width: 100%;
+    max-height: 800px;
+    max-width: 800px;
+    margin: 10px;
+}
