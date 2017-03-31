@@ -6,7 +6,7 @@ I am current reworking and restyling a weather application project that was star
 I am focusing on making the layout more appealing, as well as, responsive. I plan to then refactor the JS file are take care of 
 a lot of repeated code, etc. Feel free to take a look at the progress I've made! 
 
-##### Technologies being used:
+## This project includes : 
 * Bootstrap
 * jQuery
 * Moment.js
