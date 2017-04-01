@@ -16,6 +16,9 @@
     // ----- DEFAULT: Weather Data .done Function ----------------------------------//
     weatherData.done(function (data) {
 
+        console.log("Data Retrieved!")
+        console.log(data);
+
         // put name of city into header
         $('#cityName').text(data.city.name);
 
@@ -28,13 +31,24 @@
         data.list.forEach(function (obj) {
             days +=
                 "<div class='dayDiv'>"
-                + "<h5 class='dateText'>" + moment.unix(obj.dt).format("dddd, MMM-DD-YYYY") + "</h5>"
-                + "<p id='highLow'><strong>High:</strong> " + Math.round(obj.temp.max) + "&deg" + " /// " + "<strong>Low:</strong> " + Math.round(obj.temp.min) + "&deg" + "</p>"
-                + "<p id='conditions'><strong>Conditions:</strong> " + obj.weather[0].main + " ( " + obj.weather[0].description + " )</p>"
-                + "<p id='humidity'><strong>Humidity:</strong> " + obj.humidity + "</p>"
-                + "<p id='pressure'><strong>Pressure:</strong> " + obj.pressure + "</p>"
-                + "<img id='icon' src='http://openweathermap.org/img/w/" + obj.weather[0].icon + ".png'>"
-                + "</div>";
+                    + "<h5 class='dateText'>" + moment.unix(obj.dt).format("ddd, MM-DD-YYYY") + "</h5>"
+                    + "<div id='highLowDiv'>"
+                        + "<p id='highLow'>"
+                            + "<span id='high'>" + Math.round(obj.temp.max) + "&deg</span>"
+                            + " <span id='low'>" + Math.round(obj.temp.min) + "&deg" + "</span>"
+                        + "</p>"
+                    + "</div>" //end of high low div //
+                    + "<div id='bottomBlock'>"
+                        + "<div id='conditionsDiv'>"
+                            + "<p id='conditions'>" + obj.weather[0].main + " ( " + obj.weather[0].description + " )</p>"
+                            + "<p id='humidity'>Humidity: " + obj.humidity + " %</p>"
+                            + "<p id='pressure'>Pressure: " + obj.pressure + "</p>"
+                        + "</div>" // end of conditions div //
+                        + "<div id='iconDiv'>"
+                            + "<img id='icon' src='http://openweathermap.org/img/w/" + obj.weather[0].icon + ".png'>"
+                        + "</div>" // end of icon div
+                    + "</div>" // end of bottom block //
+                + "</div>"; // end of day div //
 
             $('#forecastDiv').html(days);
         });
@@ -64,13 +78,24 @@
             data.list.forEach(function (obj) {
                 days +=
                     "<div class='dayDiv'>"
-                    + "<h5 class='dateText'>" + moment.unix(obj.dt).format("dddd, MMM-DD-YYYY") + "</h5>"
-                    + "<p id='highLow'><strong>High:</strong> " + Math.round(obj.temp.max) + "&deg" + " /// " + "<strong>Low:</strong> " + Math.round(obj.temp.min) + "&deg" + "</p>"
-                    + "<p id='conditions'><strong>Conditions:</strong> " + obj.weather[0].main + " ( " + obj.weather[0].description + " )</p>"
-                    + "<p id='humidity'><strong>Humidity:</strong> " + obj.humidity + "</p>"
-                    + "<p id='pressure'><strong>Pressure:</strong> " + obj.pressure + "</p>"
+                    + "<h5 class='dateText'>" + moment.unix(obj.dt).format("ddd, MM-DD-YYYY") + "</h5>"
+                    + "<div id='highLowDiv'>"
+                    + "<p id='highLow'>"
+                    + "<span id='high'>" + Math.round(obj.temp.max) + "&deg</span>"
+                    + " <span id='low'>" + Math.round(obj.temp.min) + "&deg" + "</span>"
+                    + "</p>"
+                    + "</div>" //end of high low div //
+                    + "<div id='bottomBlock'>"
+                    + "<div id='conditionsDiv'>"
+                    + "<p id='conditions'>" + obj.weather[0].main + " ( " + obj.weather[0].description + " )</p>"
+                    + "<p id='humidity'>Humidity: " + obj.humidity + " %</p>"
+                    + "<p id='pressure'>Pressure: " + obj.pressure + "</p>"
+                    + "</div>" // end of conditions div //
+                    + "<div id='iconDiv'>"
                     + "<img id='icon' src='http://openweathermap.org/img/w/" + obj.weather[0].icon + ".png'>"
-                    + "</div>";
+                    + "</div>" // end of icon div
+                    + "</div>" // end of bottom block //
+                    + "</div>"; // end of day div //
 
                 $('#forecastDiv').html(days);
             });
@@ -83,6 +108,7 @@
 
     // ----- MAP OPTIONS ----------------------------------------------------//
     var mapOptions = {
+        disableDoubleClickZoom: true,
         // ZOOM LEVEL
         zoom: 4,
         // DEFAULT CENTER [SA,TX]
@@ -97,14 +123,15 @@
         },
         zoomControl: true,
         zoomControlOptions: {
-            position: google.maps.ControlPosition.RIGHT_TOP
+            position: google.maps.ControlPosition.RIGHT_CENTER
         },
-        scaleControl: true,
+        scaleControl: false,
         streetViewControl: false,
         streetViewControlOptions: {
             position: google.maps.ControlPosition.LEFT_TOP
         },
         fullscreenControl: false,
+        scrollwheel: false,
         styles: [
             {
                 "elementType": "geometry",
@@ -396,13 +423,24 @@
             data.list.forEach(function (obj) {
                 days +=
                     "<div class='dayDiv'>"
-                    + "<h5 class='dateText'>" + moment.unix(obj.dt).format("dddd, MMM-DD-YYYY") + "</h5>"
-                    + "<p id='highLow'><strong>High:</strong> " + Math.round(obj.temp.max) + "&deg" + " /// " + "<strong>Low:</strong> " + Math.round(obj.temp.min) + "&deg" + "</p>"
-                    + "<p id='conditions'><strong>Conditions:</strong> " + obj.weather[0].main + " ( " + obj.weather[0].description + " )</p>"
-                    + "<p id='humidity'><strong>Humidity:</strong> " + obj.humidity + "</p>"
-                    + "<p id='pressure'><strong>Pressure:</strong> " + obj.pressure + "</p>"
+                    + "<h5 class='dateText'>" + moment.unix(obj.dt).format("ddd, MM-DD-YYYY") + "</h5>"
+                    + "<div id='highLowDiv'>"
+                    + "<p id='highLow'>"
+                    + "<span id='high'>" + Math.round(obj.temp.max) + "&deg</span>"
+                    + " <span id='low'>" + Math.round(obj.temp.min) + "&deg" + "</span>"
+                    + "</p>"
+                    + "</div>" //end of high low div //
+                    + "<div id='bottomBlock'>"
+                    + "<div id='conditionsDiv'>"
+                    + "<p id='conditions'>" + obj.weather[0].main + " ( " + obj.weather[0].description + " )</p>"
+                    + "<p id='humidity'>Humidity: " + obj.humidity + " %</p>"
+                    + "<p id='pressure'>Pressure: " + obj.pressure + "</p>"
+                    + "</div>" // end of conditions div //
+                    + "<div id='iconDiv'>"
                     + "<img id='icon' src='http://openweathermap.org/img/w/" + obj.weather[0].icon + ".png'>"
-                    + "</div>";
+                    + "</div>" // end of icon div
+                    + "</div>" // end of bottom block //
+                    + "</div>"; // end of day div //
 
                 $('#forecastDiv').html(days);
             });

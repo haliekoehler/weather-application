@@ -1,30 +1,35 @@
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+@import url('https://fonts.googleapis.com/css?family=Handlee|Open+Sans+Condensed:300');
 
 body {
-    background-image: url('img/sky.jpeg');
+    background-image: url('sky.jpeg');
     background-attachment: fixed;
     background-size: cover;
 }
+
+#main-header {
+    text-align: center;
+    font-family: 'Handlee', cursive;
+    font-size: 65px;
+    padding: 10px;
+    font-weight: bolder;
+    text-shadow: 0 2px 3px white;
+    letter-spacing: 2px;
+}
+
+/* ------------- CURRENT CITY DIV ------------- */
+
 
 label {
     color: black;
 }
 
-#main-header {
-    text-align: center;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 60px;
-    padding: 10px;
-}
-
-/* ------------- CURRENT CITY DIV ------------- */
-
 #currentCityDiv {
     background-color: #5498a7;
     padding: 5px;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Handlee', cursive;
     text-align: center;
     color: aliceblue;
+    letter-spacing: 1px;
 }
 
 #cityName {
@@ -37,7 +42,8 @@ label {
 #numberOfDays {
     color: aliceblue;
     text-align: center;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Handlee', cursive;
+    letter-spacing: 1px;
 }
 
 /* ------------- FORECAST DIV ------------- */
@@ -47,36 +53,106 @@ label {
     margin-top: 10px;
 }
 
-.dateText {
-    background-color: aliceblue;
-    margin: 0 0 5px 0;
-    padding: 3px;
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: bolder;
-}
-
-#forecastDiv > .dayDiv:first-child > .dateText {
-    font-size: 18px;
-    padding: 5px;
-}
-
-.dayDiv {
-    border: 1px solid rgba(27, 109, 133, 0.7);
-    padding: 10px;
-    width: 100%;
-    height: 250px;
-}
+/*#forecastDiv > .dayDiv:first-child > .dateText {*/
+    /*font-size: 18px;*/
+    /*padding: 5px;*/
+/*}*/
 
 #forecastDiv > .dayDiv:first-child {
     background-color: aliceblue;
 }
 
+/* ------------- FORMULATED DAY DIV ------------- */
+
+.dayDiv {
+    border: 1px solid rgba(27, 109, 133, 0.7);
+    padding: 10px;
+    width: 100%;
+    height: 220px;
+    background-color: rgba(240, 248, 255, .6);
+    margin-bottom: 5px;
+}
+
+.dateText {
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+    background-color: #5498a7;
+    color: white;
+    margin: 0 0 5px 0;
+    width: 100%;
+    font-family: 'Handlee', cursive;
+    letter-spacing: 1px;
+}
+
+#highLowDiv {
+    display: block;
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
+}
+
+#high {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#low {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 30px;
+}
+
+#bottomBlock {
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+#icon {
+    display: inline;
+    float: right;
+    padding: 5px;
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    border: 1px solid #5498a7;
+    background-color: white;
+}
+
+#conditionsDiv {
+    display: inline;
+    font-family: 'Open Sans Condensed', sans-serif;
+    float: left;
+    line-height: 15px;
+    padding: 5px;
+}
+
+#conditions {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#humidity {
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 15px;
+}
+
+#pressure {
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 5px;
+}
+
+
 /* ------------- CHANGE LOCATION ------------- */
 
 #changeLocationDiv {
-    /*background-color: aliceblue;*/
-    padding: 10px;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #5498a7;
+    padding: 6px;
     width: 100%;
+    height: 50px;
 }
 
 #changeLocationDiv > .form-group {
@@ -85,20 +161,23 @@ label {
 }
 
 #changeLocationDiv > .form-group > input {
-    /*display: block;*/
-    margin: 5px auto;
+    margin: 0 auto;
     padding: 5px;
     width: 50%;
     border-radius: 5px;
     text-align: center;
 }
 
+#changeLocationDiv > .form-group > button {
+    background-color: #edf6ff;
+}
+
 /* ------------- MAP ------------- */
 
 #map-canvas {
-    height: 600px;
     width: 100%;
+    height: 750px;
     max-height: 800px;
     max-width: 800px;
-    margin: 10px;
+    border: 1px solid #5498a7;
 }
