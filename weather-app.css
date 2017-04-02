@@ -49,14 +49,9 @@ label {
 /* ------------- FORECAST DIV ------------- */
 
 #forecastDiv {
-    width: 100%;
     margin-top: 10px;
+    padding: 0;
 }
-
-/*#forecastDiv > .dayDiv:first-child > .dateText {*/
-    /*font-size: 18px;*/
-    /*padding: 5px;*/
-/*}*/
 
 #forecastDiv > .dayDiv:first-child {
     background-color: aliceblue;
@@ -67,7 +62,6 @@ label {
 .dayDiv {
     border: 1px solid rgba(27, 109, 133, 0.7);
     padding: 10px;
-    width: 100%;
     height: 220px;
     background-color: rgba(240, 248, 255, .6);
     margin-bottom: 5px;
@@ -105,15 +99,16 @@ label {
 
 #bottomBlock {
     margin: 0 auto;
-    max-width: 300px;
+    /*max-width: 300px;*/
 }
 
 #icon {
     display: inline;
     float: right;
-    padding: 5px;
-    height: 70px;
-    width: 70px;
+    /*padding: 5px;*/
+    margin: 2px 0 3px 0;
+    height: 65px;
+    width: 65px;
     border-radius: 100%;
     border: 1px solid #5498a7;
     background-color: white;
@@ -151,7 +146,7 @@ label {
     font-family: 'Titillium Web', sans-serif;
     background-color: #5498a7;
     padding: 6px;
-    width: 100%;
+    /*width: 100%;*/
     height: 50px;
 }
 
@@ -180,4 +175,66 @@ label {
     max-height: 800px;
     max-width: 800px;
     border: 1px solid #5498a7;
+}
+
+/* ------------- MEDIA QUERIES ------------- */
+
+@media only screen and (max-width: 991px) {
+
+    #forecastDiv > .dayDiv:first-child {
+        background-color: aliceblue;
+    }
+
+    .dayDiv {
+        float: left;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .dayDiv > #bottomBlock > #iconDiv > img {
+        display: none;
+    }
+
+    #bottomBlock {
+        display: block;
+    }
+
+    #bottomBlock > #conditionsDiv {
+        display: block;
+        float: none;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #map-canvas {
+        height: 400px;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    /*#highLowDiv {*/
+        /*display: inline;*/
+        /*float: left;*/
+    /*}*/
+
+    /*#bottomBlock {*/
+        /*display: inline;*/
+        /*float: left;*/
+    /*}*/
+
+    /*.dayDiv > #bottomBlock > #iconDiv {*/
+        /*display: inline;*/
+        /*float: right;*/
+    /*}*/
+
+    /*#icon {*/
+        /*display: inl*/
+    /*}*/
+
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    /* portrait phones */
 }
