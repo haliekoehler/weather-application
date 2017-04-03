@@ -30,7 +30,7 @@
 
         data.list.forEach(function (obj) {
             days +=
-                "<div class='dayDiv col-xs-4 col-sm-4 col-md-12'>"
+                "<div class='dayDiv col-xs-4 col-sm-12 col-md-12'>"
                     + "<h5 class='dateText'>" + moment.unix(obj.dt).format("ddd, MM-DD-YYYY") + "</h5>"
                     + "<div id='highLowDiv'>"
                         + "<p id='highLow'>"
@@ -38,7 +38,7 @@
                             + " <span id='low'>" + Math.round(obj.temp.min) + "&deg" + "</span>"
                         + "</p>"
                     + "</div>" //end of high low div //
-                    + "<div id='bottomBlock' class='col-sm-12'>"
+                    + "<div id='bottomBlock'>"
                         + "<div id='conditionsDiv'>"
                             + "<p id='conditions'>" + obj.weather[0].main + " ( " + obj.weather[0].description + " )</p>"
                             + "<p id='humidity'>Humidity: " + obj.humidity + " %</p>"
@@ -77,7 +77,7 @@
 
             data.list.forEach(function (obj) {
                 days +=
-                    "<div class='dayDiv'>"
+                    "<div class='dayDiv col-xs-4 col-sm-12 col-md-12'>"
                     + "<h5 class='dateText'>" + moment.unix(obj.dt).format("ddd, MM-DD-YYYY") + "</h5>"
                     + "<div id='highLowDiv'>"
                     + "<p id='highLow'>"
@@ -422,7 +422,7 @@
 
             data.list.forEach(function (obj) {
                 days +=
-                    "<div class='dayDiv'>"
+                    "<div class='dayDiv col-xs-4 col-sm-12 col-md-12'>"
                     + "<h5 class='dateText'>" + moment.unix(obj.dt).format("ddd, MM-DD-YYYY") + "</h5>"
                     + "<div id='highLowDiv'>"
                     + "<p id='highLow'>"
